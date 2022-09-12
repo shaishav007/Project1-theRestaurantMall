@@ -2,6 +2,13 @@
 @use "./colors/colors" as *;
 @use "./fontsAndTypography/fontFaces" as f;
 
+@mixin flex($direction, $justify, $align,$wrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
 
 html{
     // basal styles
@@ -13,13 +20,18 @@ html{
     margin: 0 auto;
 }
 
+p{
+    @include f.font(f.$barlowFam,regular,2rem);
+}
+
 //header styles here
 header{
     background: url(./../the-restaurant-mall-assets/home-header.jpg);
-    height: 100rem;
+    height: clamp(10rem,60vw,115rem);
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;//for the hanging image
+    background-color: $pine;
 }
 
 
@@ -70,7 +82,8 @@ h1{
     color: white;
 
     p{
-        margin: 0;
+        @include f.font(f.$josefinFam, bold, clamp(1rem, 5vw ,10rem) );
+        margin:0;
     }
     span{
         background-color: $whiteR;
@@ -97,4 +110,213 @@ h1{
     
 }
 
+//cards section
+section{
+    background: $pine;
+    color:$whiteR;
+}
+.cards{
+    
+    @include flex(row,center ,center ,wrap );
+    
+    width:90%;
+    padding-left: 0;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    
+    li{
+        @include flex(row, flex-start, flex-start, nowrap);
+        width: 64rem;
+        margin-block: 2rem;
+    
+   }
 
+   h2{
+    margin-top: 0;
+    @include f.font(f.$josefinFam,regular,4.5rem);
+    text-transform: uppercase;
+   }
+
+   p{
+    @include f.font(f.$barlowFam,regular,2rem);
+   }
+}
+.cardContent{
+    width: 60rem;
+    padding-left: 3rem;
+}
+
+.iconHolder{
+    width: 6rem;
+    height: 6rem;
+    background: $sunYellow;
+    border-radius: 50%;
+    @include flex(row, center, center, nowrap);
+    img{
+        display: block;
+        width: 50%;
+    }
+}
+
+//burgers and fries section
+.bnS{
+   background: $almostBlack; 
+}
+
+
+.content{
+    width: 40%;
+    
+    h3{
+        margin-top: 0;
+        @include f.font(f.$josefinFam,regular,4rem);
+        text-transform: uppercase;
+        padding-block: 1rem;
+        margin: 0;
+       }
+
+    p{
+        @include f.font(f.$barlowFam,regular,2rem);
+        padding-block: 2rem;
+        margin-block: 0;
+        margin-right: 30rem;
+       }
+
+    
+}
+
+.left{
+    @include flex(column,flex-start ,flex-end, wrap );
+
+    p{
+        margin-left: 30rem;
+        margin-right: 0;
+        text-align: right;
+    }
+}
+
+.readMore{
+    background: $sunYellow;
+    color: $blackR;
+    
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    display: block;
+    width: fit-content;
+    padding: 2rem;
+
+    @include f.font(f.$barlowFam,regular,2rem);
+    
+}
+
+.friesWrapper{
+    @include flex(row, space-between, center, wrap);
+}
+
+.popoutImage{
+    position: relative;
+    width: 40%;
+    height: 50rem;
+}
+
+.leftImage{
+    position: absolute;
+    top: -3rem;
+    box-shadow: 2rem 2rem $sunYellow;
+    width: 100%;
+}
+
+.rightImage{
+    position: absolute;
+    bottom: -3rem;
+    right: 0;
+    box-shadow: -2rem 3rem $sunYellow;
+    width: 100%;
+}
+
+.tsnWrapper{
+    @include flex(row-reverse,space-between , center ,wrap );
+}
+
+.giftCard{
+    @include flex(column, center, center, wrap);
+    width: 40%;
+    padding-block: 10rem;
+    h3{
+        @include f.font(f.$josefinFam,bold,4.5rem);   
+        color: $sunYellow;
+    }
+
+    p{
+        @include f.font(f.$barlowFam,normal,2rem);
+        padding-block: 2rem;
+    }
+}
+
+.findOutMore{
+    color: $whiteR;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include f.font(f.$josefinFam,normal,2rem);
+    background: $almostBlack;
+    padding: 2rem;
+    display: block;
+    width: fit-content;
+}
+
+.banner{
+    background: url(../the-restaurant-mall-assets/banner.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 70vh;
+}
+
+.natureSpaces{
+    @include flex(row,flex-start,flex-start,wrap);
+    padding-bottom: 15rem;
+    h3{
+        color: $sunYellow;
+        @include f.font(f.$josefinFam,bold,4.5rem);
+        text-transform: uppercase;
+        margin-top: 0;
+    }
+
+    img{
+        width: 40rem;
+        height: 40rem;
+        box-shadow: -2rem 2rem $sunYellow;
+    }
+}
+
+.natureContent{
+    width: 60%;
+    padding-left: 5%;
+}
+
+//gallery styles
+
+.gallery{
+    background: $almostBlack;
+    ul{
+        @include flex(row, space-evenly, center, wap);
+        padding-block: 20rem;
+       
+        
+        
+    }
+}
+
+//footer
+footer{
+    background: $blackR;
+    color: $whiteR;
+    text-align: center;
+    margin:0;
+
+    p{
+        margin: 0;
+        padding-block: 2rem;
+    }
+
+}
