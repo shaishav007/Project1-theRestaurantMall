@@ -1,0 +1,162 @@
+@use "./styles.scss" as s;
+@use "./fontsAndTypography/fontFaces" as f;
+@use "./colors/colors" as *;
+
+body{
+    background: $pine;
+}
+.blogImage{
+    background: url(../the-restaurant-mall-assets/blog-header.jpg);
+    height: clamp(10rem,36vw,115rem);
+}
+
+.blogContent{
+     @include s.flex(row,space-between,flex-start,wrap);
+     padding-block: 5rem;
+}
+
+.leftSide{
+    background: $almostBlack;
+    border: 2rem solid $pine;
+    flex-basis:30rem;
+    max-width: 45rem;
+    color: $whiteR;
+    flex-grow: 1;
+
+    margin-bottom: 30rem;
+    padding-bottom: 2rem;
+    h4{
+        color: $sunYellow;
+        @include f.font(f.$josefinFam,bold,2.5rem);
+        text-transform: uppercase;
+        margin-block: 1rem;
+    }
+
+    img{
+        position: relative;
+        width: 100%;
+        left: -3rem;
+        top: -2rem;
+    }
+}
+
+.recent{
+    color: $whiteR;
+    padding-left: 2rem;
+    h4{
+        color: $sunYellow;
+        @include f.font(f.$josefinFam,bold,2.5rem);
+        text-transform: uppercase;
+    }
+
+    a{
+        text-decoration: none;
+        @include f.font(f.$barlowFam,bold,1.5rem);
+        color: $whiteR;
+    }
+}
+
+.featured{
+    padding: 5%;
+    margin-block: 0;
+}
+
+.rightSide{
+    border-right: 0;
+    flex-basis:80rem;
+    max-width: 125rem;
+    flex-grow: 1;
+    position: relative;
+    top:-30rem;
+    .opportunitiesImg{
+       
+        box-shadow: -12px 12px 0px 6px $sunYellow;
+        
+        box-shadow: -20px 23px 0px 0px #FFD300;
+        position: relative;
+        right: -2rem;
+        width: calc(100% - 2rem);
+        
+        
+    }
+
+    h3{
+        color: $sunYellow;
+        @include f.font(f.$josefinFam,bold,4.5rem);
+        text-transform: uppercase;
+        margin: 0;
+        padding-block: 1rem;
+    }
+
+
+}
+
+.opportunities{
+    border-left: 1rem solid $sunYellow;
+    border-bottom: 1rem solid $sunYellow;
+    padding: 4rem 0 4rem 4rem;
+}
+
+.comments{
+    h3{
+        padding: 5rem 10rem;
+    }
+}
+
+.commentCard{
+    @include s.flex(row,flex-start,flex-start,nowrap);
+    padding: 2rem 10rem;
+}
+
+.date{
+    @include f.font(f.$josefinFam,bold,3rem);
+    color: $sunYellow;
+}
+
+.commentForm{
+    @include s.flex(column,center,center,nowrap);
+    width: 100%;
+    font-size: 5rem;
+    margin-top: 10rem;
+
+    input[type="text"],input[type="textarea"]{
+        color: $whiteR;
+        border: none;
+        background: $pine;
+        border-bottom: 2px solid $sunYellow;
+    }
+    
+    button{
+        width: 80%;
+        background: $sunYellow;
+        text-transform: uppercase;
+        padding-block: 4rem;
+        border: none;
+    }
+}
+.nameAndEmail{
+    @include s.flex(row,space-between,center,nowrap);
+    flex-shrink: 1;
+    width: 80%;
+    input{
+        width: 50%;
+    }
+
+    .name,.email{
+        width: 45rem;
+        padding: 0;
+    }
+      
+
+}
+
+
+.commentArea,.name,.email{
+    width: 80%;
+    margin-block: 2rem;
+}
+
+.commentArea{
+    height: 50rem;
+}
+

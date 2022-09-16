@@ -573,4 +573,172 @@ footer {
 footer p {
   margin: 0;
   padding-block: 2rem;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+body {
+  background: #2B331B;
+}
+
+.blogImage {
+  background: url(../the-restaurant-mall-assets/blog-header.jpg);
+  height: clamp(10rem, 36vw, 115rem);
+}
+
+.blogContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-block: 5rem;
+}
+
+.leftSide {
+  background: #171B0E;
+  border: 2rem solid #2B331B;
+  flex-basis: 30rem;
+  max-width: 45rem;
+  color: #FFFFFF;
+  flex-grow: 1;
+  margin-bottom: 30rem;
+  padding-bottom: 2rem;
+}
+.leftSide h4 {
+  color: #FFD300;
+  font-family: "JosefinSans";
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-block: 1rem;
+}
+.leftSide img {
+  position: relative;
+  width: 100%;
+  left: -3rem;
+  top: -2rem;
+}
+
+.recent {
+  color: #FFFFFF;
+  padding-left: 2rem;
+}
+.recent h4 {
+  color: #FFD300;
+  font-family: "JosefinSans";
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.recent a {
+  text-decoration: none;
+  font-family: "Barlow";
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+
+.featured {
+  padding: 5%;
+  margin-block: 0;
+}
+
+.rightSide {
+  border-right: 0;
+  flex-basis: 80rem;
+  max-width: 125rem;
+  flex-grow: 1;
+  position: relative;
+  top: -30rem;
+}
+.rightSide .opportunitiesImg {
+  box-shadow: -12px 12px 0px 6px #FFD300;
+  box-shadow: -20px 23px 0px 0px #FFD300;
+  position: relative;
+  right: -2rem;
+  width: calc(100% - 2rem);
+}
+.rightSide h3 {
+  color: #FFD300;
+  font-family: "JosefinSans";
+  font-weight: bold;
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding-block: 1rem;
+}
+
+.opportunities {
+  border-left: 1rem solid #FFD300;
+  border-bottom: 1rem solid #FFD300;
+  padding: 4rem 0 4rem 4rem;
+}
+
+.comments h3 {
+  padding: 5rem 10rem;
+}
+
+.commentCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: 2rem 10rem;
+}
+
+.date {
+  font-family: "JosefinSans";
+  font-weight: bold;
+  font-size: 3rem;
+  color: #FFD300;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  font-size: 5rem;
+  margin-top: 10rem;
+}
+.commentForm input[type=text], .commentForm input[type=textarea] {
+  color: #FFFFFF;
+  border: none;
+  background: #2B331B;
+  border-bottom: 2px solid #FFD300;
+}
+.commentForm button {
+  width: 80%;
+  background: #FFD300;
+  text-transform: uppercase;
+  padding-block: 4rem;
+  border: none;
+}
+
+.nameAndEmail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+  width: 80%;
+}
+.nameAndEmail input {
+  width: 50%;
+}
+.nameAndEmail .name, .nameAndEmail .email {
+  width: 45rem;
+  padding: 0;
+}
+
+.commentArea, .name, .email {
+  width: 80%;
+  margin-block: 2rem;
+}
+
+.commentArea {
+  height: 50rem;
+}/*# sourceMappingURL=blog.css.map */
