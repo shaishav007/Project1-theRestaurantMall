@@ -1,11 +1,99 @@
+@use "./styles.scss" as s;
+@use "./fontsAndTypography/fontFaces" as f;
+@use "./colors/colors" as *;
+@use "./utilities/setup";
+@use "./blog.css";
+
 .contactImage{
     background: url(../the-restaurant-mall-assets/contact-header.jpg);
-    height: clamp(10rem,60vw,115rem);
+    height: clamp(10rem, 35.4vw, 115rem);
+
 }
 
-//header styles
-.fb{
-    background: url(../icons/facebook-f.svg);
-    width: 1rem;
-    height: 1rem;
+//overall body content
+.contactContent{
+    @include s.flex(row,center,flex-start,wrap);
+}
+
+//left side styles
+
+.contactLeftSide{
+    width:28%;
+    @include s.flex(column,flex-start,flex-start,nowrap);
+    padding-block: 10rem;
+    color: $whiteR;
+
+    p{
+        padding-left:6rem;
+        flex-grow: 1;
+    }
+}
+
+.social {
+    @include s.flex(row,center,center,nowrap);
+    flex-grow: 1;
+    li{
+        list-style: none;
+        display: block;
+        padding: 2rem;
+    }
+    a{
+        padding-block: 30%;
+        font-size: 3rem;
+        color: $sunYellow;
+        
+        :hover,:focus{
+            transform: scale(1.1);
+            
+        }
+    }
+    
+ 
+}
+
+//right side styles
+.contactRightSide{
+    width: 72%;
+    padding: 5rem;
+    position: relative;
+    bottom: 10rem;
+}
+
+.formWrapper{
+    position: relative;
+}
+.contactForm{
+
+    @include s.flex(column,center,center,nowrap);
+    width: 100%;
+    font-size: 3rem;
+    background: $almostBlack;
+    box-shadow: 2rem 2rem 0px 0px $sunYellow;
+    padding-block: 10rem;
+
+    margin-top: -26rem;
+
+    input[type="text"]{
+        color: $whiteR;
+        border: none;
+        background: transparent;
+        border-bottom: 2px solid $sunYellow;
+        width: 40%;
+    }
+    
+    input[type="textarea"]{
+        border: 2px solid $sunYellow;
+        height: 30rem;
+        background: #FFFFFF00;
+        color: $whiteR;
+    }
+
+    button{
+        width: 80%;
+        background: $sunYellow;
+        text-transform: uppercase;
+        padding-block: 4rem;
+        border: none;
+        margin-block: 4rem;
+    }
 }

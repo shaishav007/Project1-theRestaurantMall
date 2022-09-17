@@ -700,14 +700,21 @@ body {
   align-items: center;
   flex-wrap: nowrap;
   width: 100%;
-  font-size: 5rem;
+  font-size: 3rem;
   margin-top: 10rem;
 }
-.commentForm input[type=text], .commentForm input[type=textarea] {
+.commentForm input[type=text] {
   color: #FFFFFF;
   border: none;
-  background: #2B331B;
+  background: transparent;
   border-bottom: 2px solid #FFD300;
+  width: 40%;
+}
+.commentForm input[type=textarea] {
+  border: 2px solid #FFD300;
+  height: 30rem;
+  background: rgba(255, 255, 255, 0);
+  color: #FFFFFF;
 }
 .commentForm button {
   width: 80%;
@@ -737,8 +744,4 @@ body {
 .commentArea, .name, .email {
   width: 80%;
   margin-block: 2rem;
-}
-
-.commentArea {
-  height: 50rem;
 }/*# sourceMappingURL=blog.css.map */

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./styles/mallContact.css">
     <link rel="stylesheet" href="./styles/styles.css">
 
+    <script src="https://kit.fontawesome.com/887ea216a3.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header class="contactImage coreHeader ">
@@ -26,30 +28,43 @@
     </header>
 
     <body>
-        <section>
-            <div class="leftSide">
+        <div class="contactContent">
+            <div class="contactLeftSide">
             <!-- this side has social media buttons -->
-                <div class="addressWrapper">
-                    <ul class="socialMediaButtons">
-                        <li><a href="" class="fb"></a></li>
-                        <li><a href="" class="insta"></a></li>
-                        <li><a href="" class="twitter"></a></li>
-                        <li><a href="" class="whatsapp"></a></li>
+                
+                    <ul class="social">
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-snapchat"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
                     </ul>
                     <p class="email">info@email.com</p>
                     <p class="address">
                         123-456-7890
                         123 Queen Street West, Unit 10,
                         Toronto, Ontario
-                        M5V2D5
-                    </p>
+                        M5V2D5</p>
+                
+            </div>
+            <div class="contactRightSide">
+                <!-- this side has the form -->
+                <div class="formWrapper">
+                    <section class="contactForm">
+                        <div class="nameAndEmail">
+                            <label for="name"></label>
+                            <input type="text" class="name" name="name" placeholder="Name">
+                            
+                            <label for="email"></label>
+                            <input type="text" class="email" name="email" placeholder="Email">
+                        </div>
+                        <label for="message"></label>
+                        <input type="textarea" class="commentArea" name="message" placeholder="Message">
+                        
+                        <button class="postComment">post Comment</button>
+                    </section>
                 </div>
             </div>
-            <div class="rightSide">
-                <!-- this side has the form -->
-
-            </div>
-        </section>
+        </div>
     </body>
 
     <footer>

@@ -116,16 +116,24 @@ body{
 .commentForm{
     @include s.flex(column,center,center,nowrap);
     width: 100%;
-    font-size: 5rem;
+    font-size: 3rem;
     margin-top: 10rem;
 
-    input[type="text"],input[type="textarea"]{
+    input[type="text"]{
         color: $whiteR;
         border: none;
-        background: $pine;
+        background: transparent;
         border-bottom: 2px solid $sunYellow;
+        width: 40%;
     }
     
+    input[type="textarea"]{
+        border: 2px solid $sunYellow;
+        height: 30rem;
+        background: #FFFFFF00;
+        color: $whiteR;
+    }
+
     button{
         width: 80%;
         background: $sunYellow;
@@ -156,7 +164,5 @@ body{
     margin-block: 2rem;
 }
 
-.commentArea{
-    height: 50rem;
-}
+
 
