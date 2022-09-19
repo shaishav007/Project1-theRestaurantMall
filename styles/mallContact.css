@@ -1375,6 +1375,8 @@ body {
   flex-wrap: nowrap;
   padding-block: 10rem;
   color: #FFFFFF;
+  flex-grow: 1;
+  margin-bottom: 25rem;
 }
 .contactLeftSide p {
   padding-left: 6rem;
@@ -1404,10 +1406,11 @@ body {
 }
 
 .contactRightSide {
-  width: 72%;
   padding: 5rem;
   position: relative;
   bottom: 10rem;
+  width: clamp(80rem, 70vw, 100rem);
+  flex-grow: 1;
 }
 
 .formWrapper {
@@ -1425,7 +1428,7 @@ body {
   background: #171B0E;
   box-shadow: 2rem 2rem 0px 0px #FFD300;
   padding-block: 10rem;
-  margin-top: -26rem;
+  margin-top: -15%;
 }
 .contactForm input[type=text] {
   color: #FFFFFF;
