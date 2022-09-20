@@ -1,6 +1,7 @@
 @use "./styles.scss" as s;
 @use "./fontsAndTypography/fontFaces" as f;
 @use "./colors/colors" as *;
+@use "./utilities/breakpoints" as b;
 
 body{
     background: $pine;
@@ -13,6 +14,11 @@ body{
 .blogContent{
      @include s.flex(row,space-between,flex-start,wrap);
      padding-block: 5rem;
+
+     @include b.breakpoint(1100px){
+        @include s.flex(column-reverse,flex-start,center,wrap);
+
+     }
 }
 
 .leftSide{
@@ -25,6 +31,14 @@ body{
 
     margin-bottom: 30rem;
     padding-bottom: 2rem;
+
+
+    @include b.breakpoint(1100px){
+        flex-grow: 1;
+        max-width: 75%;
+        margin-bottom: 0;
+    }
+
     h4{
         color: $sunYellow;
         @include f.font(f.$josefinFam,bold,2.5rem);
@@ -37,6 +51,11 @@ body{
         width: 100%;
         left: -3rem;
         top: -2rem;
+
+        @include b.breakpoint(1100px){
+                left: 0;
+                top:0;
+        }
     }
 }
 
@@ -68,6 +87,13 @@ body{
     flex-grow: 1;
     position: relative;
     top:-30rem;
+
+    @include b.breakpoint(1100px){
+        width: 85%;
+        margin: 0 auto;
+        top: 0;
+     }
+
     .opportunitiesImg{
        
         box-shadow: -12px 12px 0px 6px $sunYellow;
@@ -75,8 +101,16 @@ body{
         box-shadow: -20px 23px 0px 0px #FFD300;
         position: relative;
         right: -2rem;
-        width: calc(100% - 2rem);
+        width: min(4vw,4rem);
         
+        @include b.breakpoint(1100px){
+            position: static;
+            width: 100%;
+            box-shadow: none;
+            border: 1vw solid $sunYellow;
+
+        }
+
         
     }
 
@@ -86,6 +120,7 @@ body{
         text-transform: uppercase;
         margin: 0;
         padding-block: 1rem;
+        font-size:clamp(2rem,9vw,4.5rem);
     }
 
 
@@ -95,17 +130,34 @@ body{
     border-left: 1rem solid $sunYellow;
     border-bottom: 1rem solid $sunYellow;
     padding: 4rem 0 4rem 4rem;
+
+    @include b.breakpoint(1100px){
+        border: 1vw solid $sunYellow;
+        margin-top: -1vw;
+    }
 }
 
 .comments{
     h3{
-        padding: 5rem 10rem;
+        padding: 5%;
+
+        @include b.breakpoint(1100px){
+            text-align: center;
+        }
     }
 }
 
 .commentCard{
     @include s.flex(row,flex-start,flex-start,nowrap);
-    padding: 2rem 10rem;
+    padding: 2rem;
+
+    @include b.breakpoint(480px){
+        @include s.flex(column,center,center,wrap);
+
+        
+    }
+
+    
 }
 
 .date{
@@ -119,12 +171,20 @@ body{
     font-size: 3rem;
     margin-top: 10rem;
 
+    @include b.breakpoint(1100px){
+        margin-top: 0;
+    }
+
     input[type="text"]{
         color: $whiteR;
         border: none;
         background: transparent;
         border-bottom: 2px solid $sunYellow;
         width: 40%;
+
+        @include b.breakpoint(480px){
+            width: 85%;
+        }
     }
     
     input[type="textarea"]{
@@ -146,6 +206,12 @@ body{
     @include s.flex(row,space-between,center,nowrap);
     flex-shrink: 1;
     width: 80%;
+
+    @include b.breakpoint(480px){
+        flex-direction: column;
+        width: 100%;
+    }
+
     input{
         width: 50%;
     }
@@ -153,6 +219,8 @@ body{
     .name,.email{
         width: 45rem;
         padding: 0;
+
+       
     }
       
 
@@ -162,6 +230,8 @@ body{
 .commentArea,.name,.email{
     width: 80%;
     margin-block: 2rem;
+
+    
 }
 
 
