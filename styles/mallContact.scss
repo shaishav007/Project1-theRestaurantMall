@@ -116,6 +116,8 @@ body{
 
     @include b.breakpoint(1110px){
         margin-top: 5vw;
+        box-shadow: none;
+        border: 1vw solid $sunYellow;
     }
 
     input[type="text"]{
