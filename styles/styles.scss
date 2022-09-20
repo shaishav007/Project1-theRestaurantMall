@@ -1,6 +1,8 @@
 @use "./utilities/setup";
 @use "./colors/colors" as *;
 @use "./fontsAndTypography/fontFaces" as f;
+@use "./utilities/breakpoints" as b;
+
 
 @mixin flex($direction, $justify, $align,$wrap) {
     display: flex;
@@ -126,15 +128,24 @@ section{
     
     @include flex(row,center ,center ,wrap );
     
-    width:90%;
+    width: 90%;
     padding-left: 0;
     padding-top: 10rem;
     padding-bottom: 10rem;
+
+
     
     li{
         @include flex(row, flex-start, flex-start, nowrap);
-        width: 64rem;
+        width: max(40%, 35rem);
         margin-block: 2rem;
+
+        @include b.breakpoint(812px){
+            @include flex(column,flex-start ,center, wrap );
+            width: 85%;
+            text-align: center;
+            margin-block: 5vw;
+        }
     
    }
 
@@ -149,7 +160,7 @@ section{
    }
 }
 .cardContent{
-    width: 60rem;
+    width: 80%;
     padding-left: 3rem;
 }
 
@@ -159,6 +170,14 @@ section{
     background: $sunYellow;
     border-radius: 50%;
     @include flex(row, center, center, nowrap);
+
+    @include b.breakpoint(812px){
+        width: 20vw;
+        height: 20vw;
+        text-align: center;
+        margin-block: 5vw;
+    }
+
     img{
         display: block;
         width: 50%;
@@ -186,19 +205,42 @@ section{
         @include f.font(f.$barlowFam,regular,2rem);
         padding-block: 2rem;
         margin-block: 0;
-        margin-right: 30rem;
+        margin-right: 15%;
        }
 
     
 }
 
+.right{
+    @include b.breakpoint(812px){
+        @include flex(column,flex-start ,center, wrap );
+        width: 85%;
+        text-align: center;
+        margin-block: 15vw;
+    }
+}
+
 .left{
     @include flex(column,flex-start ,flex-end, wrap );
+    text-align: right;
+    width: clamp(40%,44vw,50%);
+
+    @include b.breakpoint(812px){
+        @include flex(column,flex-start ,flex-start, wrap );
+        width: 85%;
+        text-align: center;
+        margin-block: 5vw;
+    }
 
     p{
-        margin-left: 30rem;
+        margin-left: 10%;
         margin-right: 0;
         text-align: right;
+
+        @include b.breakpoint(812px){
+            text-align: left;
+            margin: 0;
+        }
     }
 }
 
@@ -214,17 +256,43 @@ section{
     padding: 2rem;
 
     @include f.font(f.$barlowFam,regular,2rem);
+
+    @include b.breakpoint(812px){
+        width: 100%;
+        margin: 0;
+    }
     
 }
 
 .friesWrapper{
     @include flex(row, space-between, center, wrap);
+    padding-bottom: 5vw;
+
+    @include b.breakpoint(812px){
+        @include flex(column,flex-start ,center, wrap );
+        margin-bottom: 20vw;
+    }
+    
 }
 
 .popoutImage{
     position: relative;
-    width: 40%;
-    height: 50rem;
+    width: clamp(40%,44vw,50%);
+    height: 28vw;
+
+    @include b.breakpoint(812px){
+        width: 90%;
+        box-shadow: none;
+        margin-bottom: 15vw;
+    }
+
+    img{
+        @include b.breakpoint(812px){
+            width: 100%;
+            box-shadow: none;
+            border: 2vw solid $sunYellow;
+        }
+    }
 }
 
 .leftImage{
@@ -238,17 +306,21 @@ section{
     position: absolute;
     bottom: -3rem;
     right: 0;
-    box-shadow: -2rem 3rem $sunYellow;
+    box-shadow: -2rem 2rem $sunYellow;
     width: 100%;
 }
 
 .tsnWrapper{
     @include flex(row-reverse,space-between , center ,wrap );
+    padding-block:2vw;
+
+    @include b.breakpoint(812px){
+        @include flex(column,space-between , center ,wrap );
+    }
 }
 
 .giftCard{
     @include flex(column, center, center, wrap);
-    width: 40%;
     padding-block: 10rem;
     h3{
         @include f.font(f.$josefinFam,bold,4.5rem);   
@@ -270,18 +342,25 @@ section{
     padding: 2rem;
     display: block;
     width: fit-content;
+
+    @include b.breakpoint(812px){
+        width: 100%;
+        text-align: center;
+        margin-block: 5vw;
+    }
+    
 }
 
 .banner{
     background: url(../the-restaurant-mall-assets/banner.jpg);
     background-size: contain;
     background-repeat: no-repeat;
-    height: 70vh;
+    height: 40vw;
 }
 
 .natureSpaces{
     @include flex(row,flex-start,flex-start,wrap);
-    padding-bottom: 15rem;
+    padding-bottom: 5vw;
     h3{
         color: $sunYellow;
         @include f.font(f.$josefinFam,bold,4.5rem);
@@ -289,16 +368,36 @@ section{
         margin-top: 0;
     }
 
-    img{
-        width: 40rem;
-        height: 40rem;
-        box-shadow: -2rem 2rem $sunYellow;
+    
+}
+
+.squareImg{
+    width: 28vw;
+    padding-block: calc(0.5*(130em - 100vw));
+    min-width: 26rem;
+    flex-grow: 1;
+  
+    @include b.breakpoint(812px){
+        padding-block: 5vw;
     }
+
+    img{
+        width: 100%;
+        box-shadow: -1vw 1vw $sunYellow;
+
+        @include b.breakpoint(812px){
+            box-shadow:none;
+        border:2vw solid $sunYellow;
+        }
+    }
+
+    
 }
 
 .natureContent{
     width: 60%;
     padding-left: 5%;
+    flex-grow: 1;
 }
 
 //gallery styles
@@ -306,11 +405,28 @@ section{
 .gallery{
     background: $almostBlack;
     ul{
-        @include flex(row, space-evenly, center, wap);
-        padding-block: 20rem;
-       
+        @include flex(row, space-evenly, center, wrap);
+        padding-block: 5vw;
+
         
-        
+        li{
+            width: 24vw;
+            list-style:none;
+
+            @include b.l {
+                width: 33vw;
+            }
+
+        }
+        img{
+            width: 100%;
+        }
+
+        @include b.l {
+            :nth-child(2){
+                display: none;
+            }
+        }
     }
 }
 

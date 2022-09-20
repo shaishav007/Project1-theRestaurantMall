@@ -343,7 +343,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 90%;
+  width: max(45%, 28rem);
   padding-left: 0;
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -413,7 +413,20 @@ section {
   font-size: 2rem;
   padding-block: 2rem;
   margin-block: 0;
-  margin-right: 30rem;
+  margin-right: 15%;
+}
+
+@media (max-width: 812px) {
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 85%;
+    text-align: center;
+    margin-block: 15vw;
+  }
 }
 
 .left {
@@ -422,11 +435,31 @@ section {
   justify-content: flex-start;
   align-items: flex-end;
   flex-wrap: wrap;
+  text-align: right;
+  width: clamp(40%, 44vw, 50%);
+}
+@media (max-width: 812px) {
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 85%;
+    text-align: center;
+    margin-block: 5vw;
+  }
 }
 .left p {
-  margin-left: 30rem;
+  margin-left: 10%;
   margin-right: 0;
   text-align: right;
+}
+@media (max-width: 812px) {
+  .left p {
+    text-align: left;
+    margin: 0;
+  }
 }
 
 .readMore {
@@ -443,6 +476,12 @@ section {
   font-weight: regular;
   font-size: 2rem;
 }
+@media (max-width: 812px) {
+  .readMore {
+    width: 100%;
+    margin: 0;
+  }
+}
 
 .friesWrapper {
   display: flex;
@@ -450,12 +489,37 @@ section {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 5vw;
+}
+@media (max-width: 812px) {
+  .friesWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20vw;
+  }
 }
 
 .popoutImage {
   position: relative;
-  width: 40%;
-  height: 50rem;
+  width: clamp(40%, 44vw, 50%);
+  height: 28vw;
+}
+@media (max-width: 812px) {
+  .popoutImage {
+    width: 90%;
+    box-shadow: none;
+    margin-bottom: 15vw;
+  }
+}
+@media (max-width: 812px) {
+  .popoutImage img {
+    width: 100%;
+    box-shadow: none;
+    border: 2vw solid #FFD300;
+  }
 }
 
 .leftImage {
@@ -469,7 +533,7 @@ section {
   position: absolute;
   bottom: -3rem;
   right: 0;
-  box-shadow: -2rem 3rem #FFD300;
+  box-shadow: -2rem 2rem #FFD300;
   width: 100%;
 }
 
@@ -479,6 +543,16 @@ section {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding-block: 2vw;
+}
+@media (max-width: 812px) {
+  .tsnWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 
 .giftCard {
@@ -487,7 +561,6 @@ section {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 40%;
   padding-block: 10rem;
 }
 .giftCard h3 {
@@ -517,12 +590,19 @@ section {
   width: -moz-fit-content;
   width: fit-content;
 }
+@media (max-width: 812px) {
+  .findOutMore {
+    width: 100%;
+    text-align: center;
+    margin-block: 5vw;
+  }
+}
 
 .banner {
   background: url(../the-restaurant-mall-assets/banner.jpg);
   background-size: contain;
   background-repeat: no-repeat;
-  height: 70vh;
+  height: 40vw;
 }
 
 .natureSpaces {
@@ -531,7 +611,7 @@ section {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding-bottom: 15rem;
+  padding-bottom: 5vw;
 }
 .natureSpaces h3 {
   color: #FFD300;
@@ -541,15 +621,33 @@ section {
   text-transform: uppercase;
   margin-top: 0;
 }
-.natureSpaces img {
-  width: 40rem;
-  height: 40rem;
-  box-shadow: -2rem 2rem #FFD300;
+
+.squareImg {
+  width: 28vw;
+  padding-block: calc(0.5 * (130em - 100vw));
+  min-width: 26rem;
+  flex-grow: 1;
+}
+@media (max-width: 812px) {
+  .squareImg {
+    padding-block: 5vw;
+  }
+}
+.squareImg img {
+  width: 100%;
+  box-shadow: -1vw 1vw #FFD300;
+}
+@media (max-width: 812px) {
+  .squareImg img {
+    box-shadow: none;
+    border: 2vw solid #FFD300;
+  }
 }
 
 .natureContent {
   width: 60%;
   padding-left: 5%;
+  flex-grow: 1;
 }
 
 .gallery {
@@ -560,8 +658,25 @@ section {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  flex-wrap: wap;
-  padding-block: 20rem;
+  flex-wrap: wrap;
+  padding-block: 5vw;
+}
+.gallery ul li {
+  width: 24vw;
+  list-style: none;
+}
+@media (max-width: 1200px) {
+  .gallery ul li {
+    width: 33vw;
+  }
+}
+.gallery ul img {
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .gallery ul :nth-child(2) {
+    display: none;
+  }
 }
 
 footer {
