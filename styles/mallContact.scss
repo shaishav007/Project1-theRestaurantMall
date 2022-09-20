@@ -3,6 +3,11 @@
 @use "./colors/colors" as *;
 @use "./utilities/setup";
 @use "./blog.css";
+@use "./utilities/breakpoints" as b;
+
+body{
+    background: $pine;
+}
 
 .contactImage{
     background: url(../the-restaurant-mall-assets/contact-header.jpg);
@@ -13,6 +18,10 @@
 //overall body content
 .contactContent{
     @include s.flex(row,center,flex-start,wrap);
+
+    @include b.breakpoint(1110px){
+        @include s.flex(column-reverse,center,center,wrap);
+    }
 }
 
 //left side styles
@@ -23,21 +32,43 @@
     padding-block: 10rem;
     color: $whiteR;
     flex-grow: 1;
-    margin-bottom: 25rem;
+
+    @include b.breakpoint(1110px){
+        width: 60%;
+        @include s.flex(column,center,center,nowrap);
+    }
 
     p{
         padding-left:6rem;
         flex-grow: 1;
+
+        @include b.breakpoint(1110px){
+            padding: 0;
+            text-align: center;
+        }
     }
 }
 
 .social {
     @include s.flex(row,center,center,nowrap);
     flex-grow: 1;
+
+    @include b.breakpoint(1110px){
+        padding: 0;
+        text-align: center;
+        
+    }
+
     li{
         list-style: none;
         display: block;
         padding: 2rem;
+
+        @include b.breakpoint(1110px){
+            padding: 5vw;
+            
+        }
+
     }
     a{
         padding-block: 30%;
@@ -61,6 +92,12 @@
 
     width: clamp(80rem,70vw,100rem);
     flex-grow: 1;
+
+    @include b.breakpoint(1110px){
+        width: 85%;
+        bottom: 0;
+        padding: 0;
+    }
 }
 
 .formWrapper{
@@ -77,17 +114,25 @@
 
     margin-top: -15%;
 
+    @include b.breakpoint(1110px){
+        margin-top: 5vw;
+    }
+
     input[type="text"]{
         color: $whiteR;
         border: none;
         background: transparent;
         border-bottom: 2px solid $sunYellow;
         width: 40%;
+
+        @include b.breakpoint(480px){
+            width: 80%;
+        }
     }
     
     input[type="textarea"]{
         border: 2px solid $sunYellow;
-        height: 30rem;
+        height: 30vw;
         background: #FFFFFF00;
         color: $whiteR;
     }
