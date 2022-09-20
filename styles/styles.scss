@@ -151,8 +151,10 @@ section{
 
    h2{
     margin-top: 0;
-    @include f.font(f.$josefinFam,regular,4.5rem);
+    @include f.font(f.$josefinFam,regular,min(12vw,4.5rem));
     text-transform: uppercase;
+
+    
    }
 
    p{
@@ -162,6 +164,10 @@ section{
 .cardContent{
     width: 80%;
     padding-left: 3rem;
+
+    @include b.breakpoint(812px){
+        padding-left: 0;
+    }
 }
 
 .iconHolder{

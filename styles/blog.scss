@@ -101,7 +101,7 @@ body{
         box-shadow: -20px 23px 0px 0px #FFD300;
         position: relative;
         right: -2rem;
-        width: min(4vw,4rem);
+        width: 100%;
         
         @include b.breakpoint(1100px){
             position: static;
