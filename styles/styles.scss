@@ -43,15 +43,13 @@ p{
 
 
 
-
 //nav is HERE
 .upperNav{
     ul{
-        display: flex;
-        flex-direction: row;
         list-style: none;
         margin-top: 0;
         padding-left: clamp(0.5rem, 0.5vw, 4rem);
+        
         li{
             //padding
             padding-left: 1rem;
@@ -62,7 +60,7 @@ p{
             //text
             text-transform: capitalize;
             text-decoration: none;
-            @include f.font(f.$josefinFam,bold,clamp(1rem,2vw,2rem));
+            @include f.font(f.$josefinFam,bold,clamp(1.8rem,2vw,2.5rem));
 
             padding-block: 1rem;
             //color
@@ -76,6 +74,63 @@ p{
         }
     }
 }
+
+.horizontal{
+    ul{
+    display: flex;
+        flex-direction: row;
+    }
+    @include b.breakpoint(812px){
+       display: none;
+    }
+    
+}
+
+.sliding{
+    
+    position:fixed;
+    top: 0;
+    text-align: center;
+    width: 100vw;
+    left:-500vw;
+    transition-duration: 0.5s;
+    background: #000000dd;
+    z-index: 10;
+    a{
+        @include f.font(f.$josefinFam,bold,clamp(3rem,2vw,3.5rem));
+    }
+}
+
+.closeButton{
+    position: relative;
+    background: none;
+    border: none;
+    color: white;
+    left:45vw;
+    top: 2vw;
+    i{
+        font-size: 3rem;
+    }
+
+    
+    
+}
+
+.verticalVisible{
+    transform:translateX(500vw);
+    
+}
+
+.hamburger{
+    color: white;
+    display: none;
+    @include b.breakpoint(812px){
+        display:block;
+        padding-block: 2%;
+        font-size: 3rem;
+    }
+}
+
 
 //header
 h1{

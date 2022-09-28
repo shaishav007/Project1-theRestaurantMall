@@ -14,7 +14,7 @@
 </head>
 <body>
     <header class="contactImage coreHeader ">
-        <nav class="upperNav wrapper">
+        <nav class="upperNav wrapper horizontal">
             <ul>
                 <li><a href="./index.html">home</a></li>
                 <li><a href="">about</a></li>
@@ -22,6 +22,25 @@
                 <li><a href="#">contact</a></li>
             </ul>
         </nav>
+
+        <!-- the sliding nav here -->
+        <nav class="upperNav wrapper sliding">
+            <button class="closeButton">
+                <i class="fa-solid fa-x "></i>
+            </button>
+            <ul>
+                <li><a href="">home</a></li>
+                <li><a href="">about</a></li>
+                <li><a href="./blogPost.html">blog</a></li>
+                <li><a href="./mallContact.html">contact</a></li>
+            </ul>
+        </nav>
+        <!-- the hamburger button here -->
+        <div class="wrapper hamburger">
+            <i class="fa-sharp fa-solid fa-bars"></i>
+        </div>
+        <!-- sliding nav code ends here -->
+
         <h1 class="wrapper">
             <p>Get in Touch</p>
         </h1>
@@ -73,4 +92,6 @@
         </p>
     </footer>
 </body>
+<script src="https://kit.fontawesome.com/887ea216a3.js" crossorigin="anonymous"></script>
+<script src="./scripts/app.js"></script>
 </html>

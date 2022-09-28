@@ -269,8 +269,6 @@ p {
 }
 
 .upperNav ul {
-  display: flex;
-  flex-direction: row;
   list-style: none;
   margin-top: 0;
   padding-left: clamp(0.5rem, 0.5vw, 4rem);
@@ -285,12 +283,66 @@ p {
   text-decoration: none;
   font-family: "JosefinSans";
   font-weight: bold;
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1.8rem, 2vw, 2.5rem);
   padding-block: 1rem;
   color: white;
 }
 .upperNav ul a:hover {
   border-bottom: 0.2rem solid #FFD300;
+}
+
+.horizontal ul {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 812px) {
+  .horizontal {
+    display: none;
+  }
+}
+
+.sliding {
+  position: fixed;
+  top: 0;
+  text-align: center;
+  width: 100vw;
+  left: -500vw;
+  transition-duration: 0.5s;
+  background: rgba(0, 0, 0, 0.8666666667);
+  z-index: 10;
+}
+.sliding a {
+  font-family: "JosefinSans";
+  font-weight: bold;
+  font-size: clamp(3rem, 2vw, 3.5rem);
+}
+
+.closeButton {
+  position: relative;
+  background: none;
+  border: none;
+  color: white;
+  left: 45vw;
+  top: 2vw;
+}
+.closeButton i {
+  font-size: 3rem;
+}
+
+.verticalVisible {
+  transform: translateX(500vw);
+}
+
+.hamburger {
+  color: white;
+  display: none;
+}
+@media (max-width: 812px) {
+  .hamburger {
+    display: block;
+    padding-block: 2%;
+    font-size: 3rem;
+  }
 }
 
 h1 {
